@@ -1606,6 +1606,7 @@ name = "sample1"
 version = "0.1.0"
 dependencies = [
  "calcite",
+ "dces 0.3.0",
  "deno_core",
  "orbtk",
  "orbtk-api 0.3.1-alpha2",

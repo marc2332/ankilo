@@ -14,6 +14,7 @@ orbtk-api = "0.3.1-alpha2"
 serde_derive = "1.0.114"
 serde = "1.0.114"
 orbtk-widgets = "0.3.1-alpha2"
+dces = { git = "https://gitlab.redox-os.org/redox-os/dces-rust.git",  branch = "develop" }
 
 [lib]
 crate-type = ["cdylib"]
