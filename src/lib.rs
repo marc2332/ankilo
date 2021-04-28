@@ -1,5 +1,5 @@
 // Copyright 2018-2021 the Deno authors. All rights reserved. MIT license.
-use orbtk::prelude::*;
+use fltk::{app, prelude::*, window::Window};
 use json::{parse, JsonValue};
 
 use deno_core::plugin_api::Interface;
@@ -25,16 +25,13 @@ fn create_window(
 			println!("zero_copy: {}", buf_str);
 		}
 
-		Application::new()
-			.window(move |ctx| {
-				Window::new()
-					.title(String::from("test"))
-					.position((100.0, 100.0))
-					.size(400.0, 400.0)
-					.child(TextBlock::new().text("Sample").build(ctx))
-					.build(ctx)
-			})
-			.run();
+		let app = app::App::default();
+		let mut wind = Window::new(100, 100, 400, 300, "Hello from rust");
+		wind.end();
+		wind.show();
+		app.run().unwrap();
+
+
 
 		let result = b"test";
 		let result_box: Box<[u8]> = Box::new(*result);
